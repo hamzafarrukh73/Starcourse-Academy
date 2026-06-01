@@ -1,0 +1,43 @@
+{
+  "name": "nuxt-starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "generate:types": "bunx supabase gen types typescript --project-id qfrddclqhkoszajpbsyk --schema public,auth > ./app/types/database.types.ts",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.111",
+    "@iconify-json/simple-icons": "^1.2.84",
+    "@nuxt/ui": "^4.8.1",
+    "@nuxtjs/supabase": "^2.0.9",
+    "@pinia/nuxt": "^0.11.3",
+    "@supabase/supabase-js": "^2.106.2",
+    "@vite-pwa/nuxt": "1.1.1",
+    "nuxt": "^4.4.6",
+    "tailwindcss": "^4.3.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.15.2",
+    "eslint": "^9.39.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^16.4.0",
+    "openapi-typescript": "^7.13.0",
+    "supabase": "^2.102.0",
+    "supazod": "^4.5.0",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ]
+  }
+}
