@@ -44,9 +44,13 @@ export default defineNuxtConfig({
       }
     }
   },
-
   pwa: {
-    icon: false // disables the icon module
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'Starcourse Academy',
+      short_name: 'Starcourse',
+      display: 'standalone'
+    }
   },
 
   supabase: {
