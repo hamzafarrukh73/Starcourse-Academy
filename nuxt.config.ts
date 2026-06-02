@@ -46,10 +46,24 @@ export default defineNuxtConfig({
   },
   pwa: {
     registerType: 'autoUpdate',
+    registerWebManifestInRouteRules: true,
     manifest: {
       name: 'Starcourse Academy',
       short_name: 'Starcourse',
-      display: 'standalone'
+      description: 'Starcourse Academy app',
+      display: 'standalone',
+      icons: [
+        {
+          src: 'icon-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: 'icon-512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
     }
   },
 
