@@ -10,7 +10,7 @@
       variant="soft"
       color="success"
       class="rounded-full"
-      :to="EXTERNAL_URLS.social.whatsapp"
+      :to="LINKS.social.whatsapp"
       target="_blank"
       :ui="{
         leadingIcon: 'size-15'

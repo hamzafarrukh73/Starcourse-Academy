@@ -2,11 +2,11 @@ export default defineAppConfig({
   ui: {
     header: {
       slots: {
-        root: ''
+        root: 'flex items-center bg-transparent backdrop-blur-none border-none'
       }
     },
     main: {
-      base: 'min-h-0 grow grid'
+      base: 'grow grid min-h-0 h-[-ui-main-height]'
     },
     footer: {
       slots: {
@@ -28,8 +28,8 @@ export default defineAppConfig({
       base: 'p-0 m-0 py-4 lg:py-8 '
     },
     colors: {
-      primary: 'blue',
-      secondary: 'blue',
+      primary: 'yellow',
+      secondary: 'slate',
       neutral: 'neutral'
     }
   }

@@ -1,4 +1,4 @@
-import type { Activities } from '~/repository/modules/activities'
+import type { Activities } from '~/api/repository/activities'
 import type { ApiError } from '~/plugins/errors'
 
 export const useActivitiesStore = defineStore('activitiesStore', () => {

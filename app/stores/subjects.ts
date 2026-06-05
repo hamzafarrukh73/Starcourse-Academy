@@ -1,4 +1,4 @@
-import type { Tables } from '~/repository/index'
+import type { Tables } from '~/api'
 import type { ApiError } from '~/plugins/errors'
 
 export const useSubjectsStore = defineStore('subjectsStore', () => {

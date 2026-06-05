@@ -4,49 +4,48 @@ export const useLandingStore = defineStore('landingStore', () => {
   // --- STATE ---
   const heroLinks = ref<ButtonProps[]>([
     {
-      label: 'Enroll Now',
-      icon: ICONS.nav.education,
+      label: 'DOWNLOAD THE APP',
       variant: 'solid',
       size: 'xl',
       to: URLS.auth.registration.home
-    },
-    {
-      label: 'Learn More',
-      icon: ICONS.info.help,
-      variant: 'soft',
-      size: 'xl',
-      to: URLS.landing.benefits
     }
   ])
 
-  const benefits = ref([
+  const resources = ref([
     {
-      title: 'Conceptual Clarity',
-      description:
-        'Master core academic theories through structured lessons that simplify complex textbook topics into clear, understandable concepts.',
-      icon: ICONS.info.feature
-    },
-    {
-      title: 'Disciplined Study Environment',
-      description:
-        'Benefit from a physical classroom dedicated to focused learning, free from the distractions of home or digital environments.',
-      icon: ICONS.nav.education
-    },
-    {
-      title: 'Exam Preparation Strategy',
-      description:
-        'Learn systematic approaches to academic assessments, focusing on curriculum requirements and effective test-taking techniques.',
-      icon: ICONS.action.edit
-    }
-  ])
-
-  const pricingTabs = ref<TabsItem[]>([
-    {
-      label: 'Matriculation',
-      slot: 'matriculation' as const
+      title: '9th Class Books Bundle',
+      icon: ICONS.info.books
     }, {
-      label: 'Intermediate',
-      slot: 'intermediate' as const
+      title: '10th Class Books Bundle',
+      icon: ICONS.info.books
+    }, {
+      title: '11th Class Books Bundle',
+      icon: ICONS.info.books
+    }, {
+      title: '12th Class Books Bundle',
+      icon: ICONS.info.books
+    }, {
+      title: 'Exam Guidelines',
+      icon: ICONS.info.notebookpen
+    }, {
+      title: 'Study Guidelines',
+      icon: ICONS.info.notebookpen
+    }
+  ])
+
+  const resourcesTabs = ref<TabsItem[]>([
+    {
+      label: '9th Class',
+      slot: '9th' as const
+    }, {
+      label: '10th Class',
+      slot: '10th' as const
+    }, {
+      label: '11th Class',
+      slot: '11th' as const
+    }, {
+      label: '12th Class',
+      slot: '12th' as const
     }
   ])
 
@@ -165,7 +164,7 @@ export const useLandingStore = defineStore('landingStore', () => {
       icon: ICONS.action.call,
       variant: 'soft',
       size: 'xl',
-      to: EXTERNAL_URLS.social.whatsapp,
+      to: LINKS.social.whatsapp,
       target: '_blank'
     }
 
@@ -173,16 +172,15 @@ export const useLandingStore = defineStore('landingStore', () => {
 
   const contacts = ref([
     {
-      description: 'Monday to Saturday, 4 PM to 7 PM',
-      icon: ICONS.info.time
-    },
-    {
-      description: '+923326283024',
-      icon: ICONS.action.call
-    },
-    {
-      description: 'thegalaxyacademyjhang@gmail.com',
-      icon: ICONS.info.mail
+      title: '+923326283024',
+      icon: ICONS.action.call,
+      to: LINKS.social.whatsapp,
+      target: '_blank'
+    }, {
+      title: 'starcourseacademy@gmail.com',
+      icon: ICONS.info.mail,
+      to: 'mailto:starcourseacademy@gmail.com',
+      target: '_blank'
     }
   ])
 
@@ -190,7 +188,7 @@ export const useLandingStore = defineStore('landingStore', () => {
     {
       label: 'Whatsapp',
       icon: ICONS.brand.whatsapp,
-      to: EXTERNAL_URLS.social.whatsapp
+      to: LINKS.social.whatsapp
     }
   ])
 
@@ -211,8 +209,8 @@ export const useLandingStore = defineStore('landingStore', () => {
   // --- EXPOSE ---
   return {
     heroLinks,
-    benefits,
-    pricingTabs,
+    resources,
+    resourcesTabs,
     matriculationPlans,
     intermediatePlans,
     ctaLinks,

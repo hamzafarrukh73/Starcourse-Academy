@@ -1,7 +1,7 @@
 export const useLayoutStore = defineStore('layoutStore', () => {
   // --- STATE ---
   const isLoading = ref(false)
-  const websiteTitle = ref('The Galaxy Academy Jhang')
+  const websiteTitle = ref('Starcourse Academy')
 
   // --- EXPOSE ---
   return {

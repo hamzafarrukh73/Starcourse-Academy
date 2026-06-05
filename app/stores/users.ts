@@ -1,4 +1,4 @@
-import type { Users } from '~/repository/modules/users'
+import type { Users } from '~/api/repository/users'
 
 import type { ApiError } from '~/plugins/errors'
 

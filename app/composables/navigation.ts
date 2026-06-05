@@ -7,10 +7,9 @@ export const useNavigation = () => {
   const navGroups = {
     landing: ref<NavigationMenuItem[][]>([
       [
-        { icon: ICONS.nav.home, label: 'Home', to: URLS.landing.hero, exactHash: true },
-        { icon: ICONS.info.feature, label: 'Benefits', to: URLS.landing.benefits, exactHash: true },
-        // { icon: ICONS.nav.billing, label: 'Pricing', to: URLS.landing.pricing, exactHash: true },
-        { icon: ICONS.action.call, label: 'Contact', to: URLS.landing.contact, exactHash: true }
+        { label: 'Home', to: URLS.landing.hero, exactHash: true },
+        { label: 'Resources', to: URLS.landing.resources, exactHash: true },
+        { label: 'Contact', to: URLS.landing.contact, exactHash: true }
       ]
     ]),
     dashboard: computed<NavigationMenuItem[][]>(() => {
@@ -24,7 +23,7 @@ export const useNavigation = () => {
           label: 'Personal Profile',
           to: URLS.dashboard.personal
         }, {
-          icon: ICONS.nav.education,
+          icon: ICONS.info.education,
           label: 'Student Details',
           to: URLS.dashboard.students
         }],

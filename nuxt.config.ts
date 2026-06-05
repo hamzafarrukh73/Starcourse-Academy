@@ -4,11 +4,17 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@pinia/nuxt',
-    '@nuxtjs/supabase',
-    '@vite-pwa/nuxt'
+    '@nuxtjs/supabase'
   ],
 
   ssr: false,
+
+  imports: {
+    dirs: [
+      'composables/**',
+      'utils/**'
+    ]
+  },
 
   devtools: {
     enabled: false
@@ -35,10 +41,11 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2026-02-27',
+
   vite: {
     optimizeDeps: {
       include: [
-        'workbox-window'
+        'zod'
       ]
     }
   },
@@ -51,28 +58,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  pwa: {
-    registerType: 'autoUpdate',
-    // registerWebManifestInRouteRules: true,
-    manifest: {
-      name: 'Starcourse Academy',
-      short_name: 'Starcourse',
-      description: 'Starcourse Academy app',
-      display: 'standalone',
-      icons: [
-        {
-          src: '/icon-192x192.png',
-          sizes: '192x192',
-          type: 'image/png'
-        },
-        {
-          src: '/icon-512x512.png',
-          sizes: '512x512',
-          type: 'image/png'
-        }
-      ]
-    }
-  },
+
   supabase: {
     redirect: false
     // redirectOptions: {

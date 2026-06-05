@@ -82,7 +82,7 @@ onMounted(() => {
               <AppLogo collapsed />
               <div class="flex flex-col items-start justify-center">
                 <h6 class="text-start text-wrap! text-3xl! font-semibold! uppercase">
-                  The Galaxy Academy Jhang
+                  Starcourse Academy
                 </h6>
               </div>
             </div>
@@ -103,7 +103,7 @@ onMounted(() => {
           <div class="flex flex-col w-full gap-2">
             <AppContentFields
               title="Academic Summary"
-              :icon="ICONS.nav.education"
+              :icon="ICONS.info.education"
               layout="grid"
               :columns="2"
               :items="[
@@ -118,7 +118,7 @@ onMounted(() => {
           <div class="flex flex-col w-full gap-2">
             <AppContentFields
               title="Academic Background"
-              :icon="ICONS.nav.education"
+              :icon="ICONS.info.education"
               layout="grid"
               :columns="2"
               :items="[

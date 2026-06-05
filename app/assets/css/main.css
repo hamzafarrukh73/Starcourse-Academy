@@ -1,56 +1,37 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
-/* @theme {
-    --*: initial;
-    --color-*: initial;
-    --text-*: initial;
-
-    --spacing: 0.25rem;
-} */
-
-:root {
-  /* --ui-bg: var(--color-white);
-
-    --ui-primary: var(--ui-color-primary-600);
-    --ui-secondary: var(--ui-color-secondary-400);
-
-    --ui-success: var(--ui-color-success-500);
-    --ui-info: var(--ui-color-info-500);
-    --ui-warning: var(--ui-color-warning-500);
-    --ui-error: var(--ui-color-error); */
-
-  /* --ui-header-height: 10vh; */
-  --ui-container: 100%;
-  --ui-footer-height: var(--ui-header-height);
-  font-size: clamp(0.75rem, 0.5rem + 0.5vw, 1.5rem);
-  /* overflow-x: hidden; */
-  /* overflow-y: auto; */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: auto;
 }
 
-/* .dark {
-    --ui-bg: var(--color-black);
+@theme {
+  --font-sans: 'Roboto', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
 
-    --ui-primary: var(--ui-color-primary-600);
-    --ui-secondary: var(--ui-color-secondary-500);
-
-    --ui-success: var(--ui-color-success-400);
-    --ui-info: var(--ui-color-info-400);
-    --ui-warning: var(--ui-color-warning-400);
-    --ui-error: var(--ui-color-error-400);
-} */
+:root {
+  --ui-header-height: 10vh;
+  --ui-container: 100%;
+  --ui-footer-height: var(--ui-header-height);
+  --ui-main-height: calc(100vh - var(--ui-header-height) - var(--ui-footer-height));
+  font-size: clamp(0.75rem, 0.5rem + 0.5vw, 1.5rem);
+  /* overflow-x: hidden; */
+  overflow-y: hidden;
+}
 
 /* body {
-    font-family: var(--font-family-sans-serif);
     @apply antialiased bg-black text-default scheme-dark dark:scheme-light;
 } */
 
 /* #__nuxt {
-    display: flex;
-    box-sizing: border-box;
-    overflow: auto;
-    background-color: transparent;
+  overflow: auto;
 } */
+
 /* h1, h2, h3, h4, h5, h6, p, b, span, td, .btn, label {
     overflow: hidden;
     white-space: nowrap;
@@ -109,6 +90,7 @@ img {
   height: 0.5rem;
   background-color: transparent;
   z-index: 100;
+  display: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -122,4 +104,29 @@ img {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Page Transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(8px);
+}
+
+/* Layout Transitions */
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+  filter: blur(12px);
 }

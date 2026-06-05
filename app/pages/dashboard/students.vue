@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { Tables } from '~/repository'
-import type { Activities } from '~/repository/modules/activities'
+import type { Tables } from '~/api'
+import type { Activities } from '~/api/repository/activities'
 
 import {
   currentStudentSchema
@@ -57,8 +57,8 @@ const loadData = async () => {
   const dbSubjects = subjectsStore.subjects
   const dbRatings = subjectsStore.ratings
 
-  ratingsState.value.subject_ranking = dbSubjects.map((subject) => {
-    const ratingRec = dbRatings.find(r => r.subject_id === subject.id)
+  ratingsState.value.subject_ranking = dbSubjects.map((subject: Tables['subjects']['Row']) => {
+    const ratingRec = dbRatings.find((r: Tables['subjects_ratings']['Row']) => r.subject_id === subject.id)
     return {
       subject_id: subject.id,
       name: subject.name,
@@ -89,7 +89,7 @@ const onSaveAcademic = async () => {
     <UPageHeader
       title="Student Details"
       description="Manage your academic profile and learning goals."
-      :icon="ICONS.nav.education"
+      :icon="ICONS.info.education"
     />
 
     <UPageBody>
@@ -97,7 +97,7 @@ const onSaveAcademic = async () => {
         <!-- Card 1: Academic Info -->
         <UPageCard
           title="Academic Profile"
-          :icon="ICONS.nav.education"
+          :icon="ICONS.info.education"
           class="h-full lg:col-span-1"
         >
           <AppForm
@@ -128,7 +128,7 @@ const onSaveAcademic = async () => {
         <UPageCard
           title="Academic Background"
           description="Provide details of your last completed academic level."
-          :icon="ICONS.nav.education"
+          :icon="ICONS.info.education"
           class="lg:col-span-3"
         >
           <AppForm

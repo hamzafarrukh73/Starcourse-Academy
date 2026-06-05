@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 definePageMeta({
-  layout: 'default'
+  layout: 'minimal'
 })
 
 const authStore = useAuthStore()
@@ -17,16 +17,22 @@ const email = ref('')
 </script>
 
 <template>
-  <UContainer class="w-full grid items-center">
+  <UContainer
+    :ui="{ base: 'w-full grid items-center py-16' }"
+  >
     <UPageCard
       v-if="verify"
       :loading="layoutStore.isLoading"
-      class="w-full max-w-md mx-auto"
+      :ui="{
+        root: 'w-full max-w-md mx-auto'
+      }"
     />
     <UPageCard
       v-else
       title="Resend Verification Email"
-      class="w-full max-w-md mx-auto"
+      :ui="{
+        root: 'w-full max-w-md mx-auto'
+      }"
     >
       <div class="w-full flex gap-2">
         <UInput

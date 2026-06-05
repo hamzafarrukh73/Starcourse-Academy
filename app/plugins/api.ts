@@ -1,5 +1,5 @@
 import type { Database } from '~/types/database.types'
-import { createRepository } from '~/repository/index'
+import { createRepository } from '~/api/index'
 
 export type NuxtSupabaseClient = ReturnType<typeof useSupabaseClient<Database>>
 

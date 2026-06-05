@@ -1,4 +1,4 @@
-import type { EmergencyContacts } from '~/repository/modules/emergency_contacts'
+import type { EmergencyContacts } from '~/api/repository/emergency_contacts'
 import type { ApiError } from '~/plugins/errors'
 
 export const useEmergencyStore = defineStore('emergencyStore', () => {

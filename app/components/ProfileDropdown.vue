@@ -54,11 +54,12 @@ const profileMenu = computed<DropdownMenuItem[]>(() => {
         ui: {
           icon: 'size-full'
         },
-        class: 'size-[3vh] lg:size-[5vh]'
+        size: 'sm'
       }"
+      size="md"
       variant="outline"
       color="neutral"
-      class="rounded-full hover:cursor-pointer p-1"
+      class="p-1 rounded-full hover:cursor-pointer"
     />
     <template #profile>
       <UUser

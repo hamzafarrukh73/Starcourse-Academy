@@ -1,4 +1,4 @@
-import type { Guardians } from '~/repository/modules/guardians'
+import type { Guardians } from '~/api/repository/guardians'
 
 import type { ApiError } from '~/plugins/errors'
 

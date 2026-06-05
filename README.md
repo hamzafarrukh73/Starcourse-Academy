@@ -1,5 +1,5 @@
-# The Galaxy Academy Jhang
-A modern, high-performance landing page and management dashboard for The Galaxy Academy, Jhang. Built with a cutting-edge technological stack ensuring speed, reliability, and excellent user experience.
+# Starcourse Academy
+A modern, high-performance landing page and management dashboard for Starcourse Academy. Built with a cutting-edge technological stack ensuring speed, reliability, and excellent user experience.
 
 ## 🚀 Getting Started
 

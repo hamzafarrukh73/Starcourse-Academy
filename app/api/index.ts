@@ -2,12 +2,12 @@ import type { Database } from '~/types/database.types'
 import type { NuxtSupabaseClient } from '~/plugins/api'
 import { GenericAPI } from './generics'
 
-import AuthRepository from './modules/auth'
-import UsersRepository from './modules/users'
-import StudentsRepository from './modules/students'
-import GuardiansRepository from './modules/guardians'
-import ActivitiesRepository from './modules/activities'
-import EmergencyContactsRepository from './modules/emergency_contacts'
+import AuthRepository from './repository/auth'
+import UsersRepository from './repository/users'
+import StudentsRepository from './repository/students'
+import GuardiansRepository from './repository/guardians'
+import ActivitiesRepository from './repository/activities'
+import EmergencyContactsRepository from './repository/emergency_contacts'
 
 export type Tables = Database['public']['Tables']
 

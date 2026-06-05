@@ -1,5 +1,5 @@
-import type { Tables } from '~/repository'
-import type { Students } from '~/repository/modules/students'
+import type { Tables } from '~/api'
+import type { Students } from '~/api/repository/students'
 
 import type { ApiError } from '~/plugins/errors'
 

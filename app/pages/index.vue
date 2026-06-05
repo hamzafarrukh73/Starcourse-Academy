@@ -9,46 +9,58 @@ const landingStore = useLandingStore()
   <UContainer class="flex flex-col gap-12">
     <UPageHero
       id="home"
-      title="Academic Institute"
-      description="Bridge the gap between school lessons and exams. We provide the structured environment and guidance that students need to excel in their subjects."
+      headline="Welcome to"
+      title="STARCOURSE ACADEMY"
+      description=""
       orientation="vertical"
       :links="landingStore.heroLinks"
       class="flex items-center justify-center min-h-[90vh] scroll-mt-[15vh]"
-    />
-
-    <UPageSection
-      id="benefits"
-      title="We Provide"
-      :features="landingStore.benefits"
-      class="flex items-center justify-center min-h-[90vh]"
-    />
+      :ui="{
+        title: 'text-wrap!',
+        description: 'text-wrap!',
+        container: 'py-4 md:py-6 lg:py-8'
+      }"
+      as="section"
+      reverse
+    >
+      <!-- <template #headline>
+        <div>
+          <img
+            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+            alt="Get it on Google Play"
+            class="h-14 w-auto mx-auto object-contain hover:scale-105 transition-transform duration-200"
+          >
+        </div>
+      </template> -->
+      <!-- <UCarousel /> -->
+    </UPageHero>
 
     <!-- <UPageSection
-      id="pricing"
-      title="Pricing Plans"
-      class="flex flex-col items-center justify-center gap-12 min-h-[90vh]"
+      id="resources"
+      title="Download Free Resources"
+      :features="landingStore.resources"
+      class="flex items-center justify-center min-h-[90vh]"
+    /> -->
+
+    <UPageSection
+      id="resources"
+      title="Download Free Resources"
+      class="flex flex-col items-center justify-center min-h-[90vh]"
     >
-      <UTabs
-        :items="landingStore.pricingTabs"
-        orientation="horizontal"
-        class="flex gap-12 w-full"
-      >
-        <template #matriculation>
-          <UPricingPlans
-            orientation="horizontal"
-            :plans="landingStore.matriculationPlans"
-            class="w-full"
-          />
-        </template>
-        <template #intermediate>
-          <UPricingPlans
-            orientation="horizontal"
-            :plans="landingStore.intermediatePlans"
-            class="w-full"
-          />
-        </template>
-      </UTabs>
-    </UPageSection> -->
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 size-full">
+        <UPageCard
+          v-for="(resource, index) in landingStore.resources"
+          :key="index"
+          :title="resource.title"
+          :icon="resource.icon"
+          :to="resource.title"
+          variant="outline"
+          orientation="horizontal"
+          reverse
+          class="rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+        />
+      </div>
+    </UPageSection>
 
     <!-- <section
       id="get-started"
@@ -66,21 +78,28 @@ const landingStore = useLandingStore()
     <UPageSection
       id="contact"
       headline="Contact Us"
-      :features="landingStore.contacts"
       title="We're here to help you"
-      description="Need support or have question? Email or call us."
-      orientation="horizontal"
-      class="flex items-center justify-center min-h-[80vh]"
+      orientation="vertical"
+      class="flex justify-center items-center min-h-[90vh]"
+      :ui="{
+        title: 'text-wrap!',
+        description: 'text-wrap!',
+        container: 'py-4 md:py-6 lg:py-8'
+      }"
     >
-      <UPageCard
-        title="Frequently Asked Questions"
-        variant="naked"
-        class="py-8 lg:py-4"
-      >
-        <UAccordion :items="landingStore.faqs" />
-      </UPageCard>
+      <div class="grid grid-cols-2 gap-8 lg:w-3/4 mx-auto">
+        <UPageCard
+          v-for="(contact, index) in landingStore.contacts"
+          :key="index"
+          :title="contact.title"
+          :icon="contact.icon"
+          :to="contact.to"
+          :target="contact.target"
+          variant="outline"
+          orientation="horizontal"
+          class="rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+        />
+      </div>
     </UPageSection>
-
-    <FloatingButton />
   </UContainer>
 </template>

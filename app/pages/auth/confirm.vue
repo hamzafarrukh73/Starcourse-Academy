@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { URLS } from '~/utils/urls'
-
 /**
  * Supabase Auth Confirmation Page
  * Handles redirects after email verification or OAuth login

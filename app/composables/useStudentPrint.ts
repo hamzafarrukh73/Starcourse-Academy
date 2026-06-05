@@ -1,4 +1,4 @@
-import type { Tables } from '~/repository'
+import type { Tables } from '~/api'
 
 export const useStudentPrint = () => {
   const authStore = useAuthStore()
@@ -27,7 +27,7 @@ export const useStudentPrint = () => {
     }
   }
 
-  const fullName = computed(() => {
+  const fullName = computed((): string => {
     const p = usersStore.user
     return `${p?.first_name || ''} ${p?.last_name || ''}`.trim() || 'Student Name'
   })
@@ -59,7 +59,7 @@ export const useStudentPrint = () => {
     if (!student) return []
 
     const baseSubjects = subjectsStore.subjects.length > 0
-      ? subjectsStore.subjects.map(s => ({ id: s.id, name: s.name }))
+      ? subjectsStore.subjects.map((s: Tables['subjects']['Row']) => ({ id: s.id, name: s.name }))
       : [
           { id: '1', name: 'Mathematics' },
           { id: '2', name: 'Physics' },

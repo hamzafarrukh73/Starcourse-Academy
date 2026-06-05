@@ -1,9 +1,9 @@
 export const URLS = {
   home: '/',
+  terms: '/terms',
   landing: {
     hero: '/#home',
-    benefits: '/#benefits',
-    pricing: '/#pricing',
+    resources: '/#resources',
     contact: '/#contact'
   },
   auth: {
@@ -24,7 +24,7 @@ export const URLS = {
     home: '/dashboard',
     personal: '/dashboard/personal',
     students: '/dashboard/students',
-    activities: '/dashboard/students',
+    activities: '/dashboard/activities',
     print: '/dashboard/print',
     account: '/dashboard/account'
   }

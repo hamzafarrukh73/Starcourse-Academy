@@ -4,6 +4,12 @@ const layoutStore = useLayoutStore()
 
 <template>
   <div class="flex flex-col min-h-screen w-full">
+    <div class="fixed flex items-center justify-center h-screen w-full inset-0 -z-2 opacity-25">
+      <img
+        src="/img/logo-collapsed.png"
+        class="aspect-square"
+      >
+    </div>
     <UHeader
       mode="slideover"
       :title="layoutStore.websiteTitle"
@@ -14,14 +20,26 @@ const layoutStore = useLayoutStore()
       </template>
 
       <template #right>
-        <UButton
-          label="Back to Home"
-          :icon="ICONS.nav.home"
-          :to="URLS.home"
-          class="items-center rounded"
-          color="neutral"
-          variant="soft"
-        />
+        <div class="flex justify-end items-center gap-2">
+          <UButton
+            :icon="ICONS.brand.youtube"
+            :to="LINKS.social.youtube"
+            target="_blank"
+            size="lg"
+            variant="soft"
+            color="neutral"
+            class="rounded-full"
+          />
+          <UButton
+            :icon="ICONS.brand.whatsapp"
+            :to="LINKS.social.whatsapp"
+            target="_blank"
+            size="lg"
+            variant="soft"
+            color="neutral"
+            class="rounded-full"
+          />
+        </div>
       </template>
     </UHeader>
 
@@ -29,11 +47,11 @@ const layoutStore = useLayoutStore()
       <slot />
     </UMain>
 
-    <UFooter>
+    <!-- <UFooter>
       <div class="flex items-center justify-center gap-2">
         <UIcon :name="ICONS.info.copyright" />
         <p>{{ new Date().getFullYear() }} {{ layoutStore.websiteTitle }}. All rights reserved.</p>
       </div>
-    </UFooter>
+    </UFooter> -->
   </div>
 </template>

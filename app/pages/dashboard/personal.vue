@@ -4,8 +4,8 @@ import {
   emergencySchema,
   addressSchema
 } from '~/schemas/dashboard/personal'
-import type { Users } from '~/repository/modules/users'
-import type { EmergencyContacts } from '~/repository/modules/emergency_contacts'
+import type { Users } from '~/api/repository/users'
+import type { EmergencyContacts } from '~/api/repository/emergency_contacts'
 
 definePageMeta({
   layout: 'dashboard',

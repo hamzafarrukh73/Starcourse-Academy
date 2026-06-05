@@ -10,7 +10,7 @@ const navItems = useNavigation()
       <UDashboardSidebar
         collapsible
         :default-size="20"
-        class="rounded-r-xl bg-neutral-800/10 dark:bg-primary-300/10"
+        class="rounded-r-xl bg-neutral-800/10 dark:bg-neutral-800/5"
       >
         <template #header="{ collapsed }">
           <AppLogo :collapsed="collapsed" />
@@ -23,7 +23,12 @@ const navItems = useNavigation()
             :collapsed="collapsed"
             :items="navItems[0]"
             :ui="{
-              link: 'gap-2 py-4'
+              root: 'py-4',
+              list: 'flex flex-col gap-2',
+              item: 'flex',
+              link: 'py-4',
+              linkLabel: 'text-md! font-normal',
+              linkLeadingIcon: 'size-6'
             }"
           />
         </template>
@@ -34,8 +39,8 @@ const navItems = useNavigation()
           <UDashboardNavbar
             mode="slideover"
             toggle-side="left"
-            :toggle="{ color: 'neutral' }"
             :menu="{ side: 'left' }"
+            :toggle="false"
           >
             <template #leading>
               <UDashboardSidebarCollapse />
@@ -49,7 +54,7 @@ const navItems = useNavigation()
 
             <template #right>
               <UButton
-                label="Back to Home"
+                label="Return Home"
                 variant="soft"
                 color="neutral"
                 :icon="ICONS.nav.home"
@@ -71,7 +76,22 @@ const navItems = useNavigation()
         <template #body>
           <slot />
         </template>
-        <template #footer />
+        <template #footer>
+          <UNavigationMenu
+            orientation="horizontal"
+            tooltip
+            popover
+            :items="navItems[0]"
+            :ui="{
+              root: 'justify-around border-t border-default',
+              list: 'flex justify-center gap-4',
+              link: 'flex-col',
+              linkLabel: 'text-xs! font-normal',
+              linkLeadingIcon: 'size-[5vh]'
+            }"
+            class="md:hidden justify-center"
+          />
+        </template>
       </UDashboardPanel>
     </UDashboardGroup>
   </div>
