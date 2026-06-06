@@ -1,4 +1,4 @@
-import type { ButtonProps, PricingPlanProps, TabsItem } from '@nuxt/ui'
+import type { ButtonProps, TabsItem } from '@nuxt/ui'
 
 export const useLandingStore = defineStore('landingStore', () => {
   // --- STATE ---
@@ -49,146 +49,12 @@ export const useLandingStore = defineStore('landingStore', () => {
     }
   ])
 
-  const matriculationPlans = ref<PricingPlanProps[]>([
-    {
-      title: 'Arts Only',
-      price: 'Rs. 1200',
-      billingCycle: '/month',
-      features: [
-        'Urdu',
-        'English',
-        'Islamiyat'
-      ],
-      button: {
-        label: 'Start Now',
-        to: URLS.auth.registration.home
-      }
-    }, {
-      title: 'Science Only',
-      price: 'Rs. 2800',
-      billingCycle: '/month',
-      features: [
-        'Physics',
-        'Mathematics',
-        'Chemistry',
-        'Biology',
-        'Computer Science'
-      ],
-      button: {
-        label: 'Start Now',
-        to: URLS.auth.registration.home
-      }
-    }, {
-      title: 'All Subjects',
-      price: 'Rs. 4000',
-      billingCycle: '/month',
-      discount: 'Rs. 3200',
-      billingPeriod: '20% off',
-      features: [
-        'Urdu',
-        'English',
-        'Islamiyat',
-        'Physics',
-        'Mathematics',
-        'Chemistry',
-        'Biology',
-        'Computer Science'
-      ],
-      button: {
-        label: 'Start Now',
-        to: URLS.auth.registration.home
-      }
-    }
-  ])
-
-  const intermediatePlans = ref<PricingPlanProps[]>([
-    {
-      title: 'Arts Only',
-      price: 'Rs. 1500',
-      billingCycle: '/month',
-      features: [
-        'Urdu',
-        'English',
-        'Islamiyat'
-      ],
-      button: {
-        label: 'Start Now',
-        to: URLS.auth.registration.home
-      }
-    }, {
-      title: 'Science Only',
-      price: 'Rs. 3000',
-      billingCycle: '/month',
-      features: [
-        'Physics',
-        'Mathematics',
-        'Biology',
-        'Chemistry',
-        'Computer Science'
-      ],
-      button: {
-        label: 'Start Now',
-        to: URLS.auth.registration.home
-      }
-    }, {
-      title: 'All Subjects',
-      price: 'Rs. 4500',
-      billingCycle: '/month',
-      discount: 'Rs. 3600',
-      billingPeriod: '20% off',
-      features: [
-        'Urdu',
-        'English',
-        'Islamiyat',
-        'Physics',
-        'Mathematics',
-        'Biology',
-        'Chemistry',
-        'Computer Science'
-      ],
-      button: {
-        label: 'Start Now',
-        to: URLS.auth.registration.home
-      }
-    }
-  ])
-  const ctaLinks = ref<ButtonProps[]>([
-    {
-      label: 'Join Now',
-      icon: ICONS.action.start,
-      variant: 'solid',
-      size: 'xl',
-      to: URLS.auth.registration.home
-    }, {
-      label: 'Contact Us',
-      icon: ICONS.action.call,
-      variant: 'soft',
-      size: 'xl',
-      to: LINKS.social.whatsapp,
-      target: '_blank'
-    }
-
-  ])
-
-  const contacts = ref([
-    {
-      title: '+923326283024',
-      icon: ICONS.action.call,
-      to: LINKS.social.whatsapp,
-      target: '_blank'
-    }, {
-      title: 'starcourseacademy@gmail.com',
-      icon: ICONS.info.mail,
-      to: 'mailto:starcourseacademy@gmail.com',
-      target: '_blank'
-    }
-  ])
-
-  const contactLinks = ref([
+  const contactLinks = ref<ButtonProps[]>([
     {
       label: 'Whatsapp',
       icon: ICONS.brand.whatsapp,
-      to: LINKS.social.whatsapp
+      to: LINKS.social.whatsapp,
+      target: '_blank'
     }
   ])
 
@@ -211,10 +77,6 @@ export const useLandingStore = defineStore('landingStore', () => {
     heroLinks,
     resources,
     resourcesTabs,
-    matriculationPlans,
-    intermediatePlans,
-    ctaLinks,
-    contacts,
     contactLinks,
     faqs
   }
