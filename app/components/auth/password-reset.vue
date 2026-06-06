@@ -1,0 +1,59 @@
+<script setup lang="ts">
+import * as z from 'zod'
+import type { FormSubmitEvent, AuthFormField } from '@nuxt/ui'
+
+const authStore = useAuthStore()
+const layoutStore = useLayoutStore()
+
+const fields: AuthFormField[] = [{
+  name: 'email',
+  type: 'email',
+  placeholder: 'Enter your email',
+  size: 'xl',
+  required: true
+}]
+
+const schema = z.object({
+  email: z.email('Please enter a correct email address')
+})
+
+type Schema = z.output<typeof schema>
+
+function onSubmit(payload: FormSubmitEvent<Schema>) {
+  authStore.resetPassword(payload.data.email)
+}
+</script>
+
+<template>
+  <UAuthForm
+    :schema="schema"
+    :fields="fields"
+    :loading="layoutStore.isLoading"
+    :validate-on="['input']"
+    :submit="{
+      label: 'Reset Password',
+      size: 'xl',
+      ui: {
+        base: 'hover:cursor-pointer'
+      }
+    }"
+    @submit="onSubmit"
+  >
+    <template #footer>
+      <div class="flex justify-between items-center">
+        <ULink
+          :to="URLS.auth.login"
+          class="text-info font-medium"
+        >
+          Remember your password?
+        </ULink>
+        <ULink
+          :to="URLS.auth.registration.home"
+          class="text-info font-medium"
+        >
+          Register here
+        </ULink>
+      </div>
+    </template>
+  </UAuthForm>
+</template>

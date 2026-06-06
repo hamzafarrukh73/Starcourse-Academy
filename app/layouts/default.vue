@@ -20,7 +20,7 @@ const navItems = useNavigation()
       :menu="{ side: 'left'
       }"
       :ui="{
-        content: 'bg-transparent max-w-full'
+        content: 'bg-default/80 max-w-full'
       }"
     >
       <template #title>
@@ -59,9 +59,6 @@ const navItems = useNavigation()
             color="neutral"
             class="rounded-full"
           />
-          <p>
-            |
-          </p>
           <div
             v-if="authStore.isAuthenticated"
             class="flex items-center gap-2"
@@ -79,19 +76,23 @@ const navItems = useNavigation()
             v-else
           >
             <UModal
-              :title="layoutStore.websiteTitle"
               :ui="{
-                content: 'divide-none',
-                title: 'text-lg!'
+                content: 'divide-none'
               }"
             >
               <UButton
                 label="Sign In"
-                size="sm"
+                size="lg"
                 variant="soft"
                 color="neutral"
                 class="px-2 rounded-full cursor-pointer"
               />
+
+              <template #title>
+                <div class="flex self-center items-center w-full">
+                  <AppLogo />
+                </div>
+              </template>
 
               <template #body>
                 <AuthLogin />
@@ -102,10 +103,10 @@ const navItems = useNavigation()
       </template>
 
       <template #content="{ close }">
-        <div class="fixed top-4 right-4 z-50">
+        <div class="absolute top-0 left-0 z-50 flex items-center h-(--ui-header-height) p-4 md:p-6 lg:p-8">
           <UButton
             icon="i-lucide-x"
-            size="lg"
+            size="sm"
             variant="solid"
             class="hover:cursor-pointer"
             @click="close"

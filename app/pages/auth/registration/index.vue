@@ -6,14 +6,10 @@ definePageMeta({
 
 <template>
   <UContainer
-    :ui="{ base: 'w-full grid items-center py-16' }"
+    :ui="{ base: 'w-full grid items-center' }"
   >
-    <UPageCard
-      :ui="{
-        root: 'w-full max-w-md mx-auto'
-      }"
-    >
+    <AuthCard>
       <AuthRegister />
-    </UPageCard>
+    </AuthCard>
   </UContainer>
 </template>

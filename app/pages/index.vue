@@ -1,8 +1,19 @@
 <script lang="ts" setup>
 definePageMeta({
-  navGroup: 'landing'
+  navGroup: 'landing',
+  middleware: 'redirects-client'
 })
 const landingStore = useLandingStore()
+
+const route = useRoute()
+
+onMounted(() => {
+  if (route.hash) {
+    const id = route.hash.slice(1)
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' })
+  }
+})
 </script>
 
 <template>
@@ -14,7 +25,7 @@ const landingStore = useLandingStore()
       description=""
       orientation="vertical"
       :links="landingStore.heroLinks"
-      class="flex items-center justify-center min-h-[90vh] scroll-mt-[15vh]"
+      class="flex items-center justify-center min-h-[90vh] scroll-mt-(--ui-header-height)"
       :ui="{
         title: 'text-wrap!',
         description: 'text-wrap!',
@@ -80,6 +91,7 @@ const landingStore = useLandingStore()
       headline="Contact Us"
       title="We're here to help you"
       orientation="vertical"
+      :links="landingStore.contactLinks"
       class="flex justify-center items-center min-h-[90vh]"
       :ui="{
         title: 'text-wrap!',
@@ -87,19 +99,18 @@ const landingStore = useLandingStore()
         container: 'py-4 md:py-6 lg:py-8'
       }"
     >
-      <div class="grid grid-cols-2 gap-8 lg:w-3/4 mx-auto">
-        <UPageCard
-          v-for="(contact, index) in landingStore.contacts"
+      <!-- <div class="grid lg:grid-cols-2 gap-8 lg:w-3/4 mx-auto">
+        <UButton
+          v-for="(contact, index) in landingStore.contactLinks"
           :key="index"
-          :title="contact.title"
+          :label="contact.label"
           :icon="contact.icon"
           :to="contact.to"
           :target="contact.target"
-          variant="outline"
           orientation="horizontal"
           class="rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
         />
-      </div>
+      </div> -->
     </UPageSection>
   </UContainer>
 </template>

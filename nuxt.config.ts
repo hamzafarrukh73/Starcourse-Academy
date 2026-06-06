@@ -21,6 +21,17 @@ export default defineNuxtConfig({
   },
 
   app: {
+    head: {
+      link: [
+        {
+          rel: 'preload',
+          as: 'font',
+          type: 'font/woff2',
+          href: '/fonts/Roboto-VariableFont_wdth,wght.woff2',
+          crossorigin: 'anonymous'
+        }
+      ]
+    },
     pageTransition: {
       name: 'page',
       mode: 'out-in'
@@ -32,6 +43,13 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
+
   colorMode: {
     preference: 'dark'
   },
