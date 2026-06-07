@@ -67,7 +67,7 @@ const links: ButtonProps[] = [
         <UPageHero
           v-bind="errorValues"
           :links="links"
-          class="flex items-center justify-center min-h-screen"
+          class="flex items-center justify-center min-h-dvh"
         />
       </UContainer>
     </NuxtLayout>

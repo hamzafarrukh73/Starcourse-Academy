@@ -26,7 +26,7 @@ onMounted(() => {
       orientation="vertical"
       :links="landingStore.heroLinks"
       :ui="{
-        root: 'flex items-center justify-center min-h-[90vh] scroll-mt-(--ui-header-height)',
+        root: 'flex items-center justify-center min-h-[90dvh] scroll-mt-(--ui-header-height)',
         title: 'text-wrap!',
         description: 'text-wrap!',
         container: 'py-4 md:py-6 lg:py-8'
@@ -39,7 +39,7 @@ onMounted(() => {
       id="resources"
       title="Download Free Resources"
       :ui="{
-        root: 'flex flex-col justify-center items-center min-h-[90vh] scroll-mt-(--ui-header-height)',
+        root: 'flex flex-col justify-center items-center min-h-[90dvh] scroll-mt-(--ui-header-height)',
         container: 'py-4 md:py-6 lg:py-8'
       }"
     >
@@ -65,7 +65,7 @@ onMounted(() => {
       orientation="vertical"
       :links="landingStore.contactLinks"
       :ui="{
-        root: 'flex justify-center items-center min-h-[90vh] scroll-mt-(--ui-header-height)',
+        root: 'flex justify-center items-center min-h-[90dvh] scroll-mt-(--ui-header-height)',
         title: 'text-wrap!',
         description: 'text-wrap!',
         container: 'py-4 md:py-6 lg:py-8'
