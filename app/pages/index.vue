@@ -38,19 +38,22 @@ onMounted(() => {
     <UPageSection
       id="resources"
       title="Download Free Resources"
-      class="flex flex-col items-center justify-center min-h-[90vh]"
+      :ui="{
+        root: 'flex flex-col justify-center items-center min-h-[90vh] scroll-mt-(--ui-header-height)',
+        container: 'py-4 md:py-6 lg:py-8'
+      }"
     >
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 size-full">
         <UPageCard
           v-for="(resource, index) in landingStore.resources"
           :key="index"
-          :title="resource.title"
-          :icon="resource.icon"
-          :to="resource.title"
-          variant="outline"
+          v-bind="resource"
           orientation="horizontal"
           reverse
-          class="rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+          variant="soft"
+          :ui="{
+            root: 'bg-elevated/80 hover:shadow-md transition-shadow duration-200'
+          }"
         />
       </div>
     </UPageSection>
@@ -61,8 +64,8 @@ onMounted(() => {
       title="We're here to help you"
       orientation="vertical"
       :links="landingStore.contactLinks"
-      class="flex justify-center items-center min-h-[90vh]"
       :ui="{
+        root: 'flex justify-center items-center min-h-[90vh] scroll-mt-(--ui-header-height)',
         title: 'text-wrap!',
         description: 'text-wrap!',
         container: 'py-4 md:py-6 lg:py-8'

@@ -156,7 +156,9 @@ const computedFields = computed(() => {
           variant="soft"
           size="xl"
           block
-          class="rounded-xl font-bold hover:cursor-pointer"
+          :ui="{
+            base: 'rounded-xl font-bold'
+          }"
           type="submit"
         />
       </slot>

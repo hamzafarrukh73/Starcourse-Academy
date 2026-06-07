@@ -1,4 +1,4 @@
-import type { ButtonProps, TabsItem } from '@nuxt/ui'
+import type { ButtonProps, PageCardProps, TabsItem } from '@nuxt/ui'
 
 export const useLandingStore = defineStore('landingStore', () => {
   // --- STATE ---
@@ -11,25 +11,31 @@ export const useLandingStore = defineStore('landingStore', () => {
     }
   ])
 
-  const resources = ref([
+  const resources = ref<PageCardProps[]>([
     {
       title: '9th Class Books Bundle',
-      icon: ICONS.info.books
+      icon: ICONS.info.books,
+      to: ''
     }, {
       title: '10th Class Books Bundle',
-      icon: ICONS.info.books
+      icon: ICONS.info.books,
+      to: ''
     }, {
       title: '11th Class Books Bundle',
-      icon: ICONS.info.books
+      icon: ICONS.info.books,
+      to: ''
     }, {
       title: '12th Class Books Bundle',
-      icon: ICONS.info.books
+      icon: ICONS.info.books,
+      to: ''
     }, {
       title: 'Exam Guidelines',
-      icon: ICONS.info.notebookpen
+      icon: ICONS.info.notebookpen,
+      to: ''
     }, {
       title: 'Study Guidelines',
-      icon: ICONS.info.notebookpen
+      icon: ICONS.info.notebookpen,
+      to: ''
     }
   ])
 

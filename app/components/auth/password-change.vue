@@ -8,13 +8,13 @@ const layoutStore = useLayoutStore()
 const fields: AuthFormField[] = [{
   name: 'password',
   type: 'password',
-  placeholder: 'Enter your new password',
+  placeholder: 'Enter New Password',
   size: 'xl',
   required: true
 }, {
   name: 'confirmPassword',
   type: 'password',
-  placeholder: 'Confirm your new password',
+  placeholder: 'Re-enter Password',
   size: 'xl',
   required: true
 }]
@@ -45,10 +45,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
     :validate-on="['input']"
     :submit="{
       label: 'Update Password',
-      size: 'xl',
-      ui: {
-        base: 'hover:cursor-pointer'
-      }
+      size: 'xl'
     }"
     @submit="onSubmit"
   >
@@ -56,7 +53,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
       <div class="flex justify-center">
         <ULink
           :to="URLS.auth.login"
-          class="text-info font-medium"
+          class="text-primary font-medium"
         >
           Back to login
         </ULink>

@@ -8,13 +8,13 @@ const layoutStore = useLayoutStore()
 const fields: AuthFormField[] = [{
   name: 'email',
   type: 'email',
-  placeholder: 'Enter your email',
+  placeholder: 'Enter Email',
   size: 'xl',
   required: true
 }]
 
 const schema = z.object({
-  email: z.email('Please enter a correct email address')
+  email: z.email('Please enter a valid email address')
 })
 
 type Schema = z.output<typeof schema>
@@ -32,10 +32,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
     :validate-on="['input']"
     :submit="{
       label: 'Reset Password',
-      size: 'xl',
-      ui: {
-        base: 'hover:cursor-pointer'
-      }
+      size: 'xl'
     }"
     @submit="onSubmit"
   >
@@ -43,13 +40,13 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
       <div class="flex justify-between items-center">
         <ULink
           :to="URLS.auth.login"
-          class="text-info font-medium"
+          class="text-primary font-medium"
         >
           Remember your password?
         </ULink>
         <ULink
           :to="URLS.auth.registration.home"
-          class="text-info font-medium"
+          class="text-primary font-medium"
         >
           Register here
         </ULink>

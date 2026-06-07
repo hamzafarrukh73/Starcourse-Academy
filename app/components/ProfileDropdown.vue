@@ -24,7 +24,6 @@ const profileMenu = computed<DropdownMenuItem[]>(() => {
       icon: ICONS.action.exit,
       label: 'Logout',
       color: 'error',
-      class: 'hover:cursor-pointer',
       onSelect: () => authStore.logout()
     }
   ]
@@ -52,14 +51,16 @@ const profileMenu = computed<DropdownMenuItem[]>(() => {
         icon: ICONS.nav.user,
         loading: 'lazy',
         ui: {
-          icon: 'size-full'
+          icon: 'size-5'
         },
         size: 'sm'
       }"
-      size="md"
-      variant="outline"
+      size="lg"
+      variant="soft"
       color="neutral"
-      class="p-1 rounded-full hover:cursor-pointer"
+      :ui="{
+        base: 'p-1 rounded-full'
+      }"
     />
     <template #profile>
       <UUser

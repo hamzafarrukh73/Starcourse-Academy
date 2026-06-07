@@ -27,6 +27,11 @@ export default defineAppConfig({
     pageBody: {
       base: 'p-0 m-0 py-4 lg:py-8 '
     },
+    input: {
+      defaultVariants: {
+        variant: 'soft'
+      }
+    },
     colors: {
       primary: 'yellow',
       secondary: 'slate',

@@ -11,13 +11,13 @@ defineProps<Props>()
   <img
     v-if="!collapsed"
     :src="IMAGES.logo"
-    :class="['h-[5vh] aspect-4/1 object-fit object-center', $props.class]"
+    :class="['h-10 object-contain object-center', $props.class]"
     alt="Logo"
   >
   <img
     v-else
     :src="IMAGES.logoCollapsed"
-    :class="['h-[5vh] lg:h-[8vh] aspect-square object-cover object-center', $props.class]"
+    :class="['h-10 aspect-square object-cover object-center', $props.class]"
     alt="Logo Collapsed"
   >
 </template>

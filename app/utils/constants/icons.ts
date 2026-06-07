@@ -23,8 +23,8 @@ export const ICONS = {
     home: 'i-lucide-home',
     interests: 'i-lucide-sparkles',
     menu: 'i-lucide-menu',
-    user: 'i-lucide-user',
-    users: 'i-lucide-users'
+    user: 'i-lucide-user-round',
+    users: 'i-lucide-users-round'
   },
 
   info: {

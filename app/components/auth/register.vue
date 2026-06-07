@@ -12,19 +12,19 @@ const layoutStore = useLayoutStore()
 const fields: AuthFormField[] = [{
   name: 'email',
   type: 'email',
-  placeholder: 'Email',
+  placeholder: 'Enter Email',
   size: 'xl',
   required: true
 }, {
   name: 'password1',
   type: 'password',
-  placeholder: 'Password',
+  placeholder: 'Enter Password',
   size: 'xl',
   required: true
 }, {
   name: 'password2',
   type: 'password',
-  placeholder: 'Confirm Password',
+  placeholder: 'Re-enter Password',
   size: 'xl',
   required: true
 }, {
@@ -71,10 +71,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
     :validate-on="['input']"
     :submit="{
       label: 'Register',
-      size: 'xl',
-      ui: {
-        base: 'hover:cursor-pointer'
-      }
+      size: 'xl'
     }"
     :on-submit="onSubmit"
   >
@@ -82,13 +79,13 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
       <div class="flex justify-between items-center">
         <ULink
           :to="URLS.auth.registration.verifyEmail"
-          class="text-info font-medium"
+          class="text-primary font-medium"
         >
           Verify Email
         </ULink>
         <ULink
           :to="URLS.auth.login"
-          class="text-info font-medium"
+          class="text-primary font-medium"
         >
           Login here
         </ULink>

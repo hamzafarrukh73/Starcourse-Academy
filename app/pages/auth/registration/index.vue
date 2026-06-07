@@ -1,12 +1,12 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'minimal'
+  layout: 'empty'
 })
 </script>
 
 <template>
   <UContainer
-    :ui="{ base: 'w-full grid items-center' }"
+    :ui="{ base: 'grow flex justify-center items-center size-full' }"
   >
     <AuthCard>
       <AuthRegister />

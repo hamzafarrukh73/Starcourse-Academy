@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'minimal'
+  layout: 'empty'
 })
 
 const authStore = useAuthStore()
@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
   <UContainer
-    :ui="{ base: 'grid items-center w-full' }"
+    :ui="{ base: 'grow flex justify-center items-center size-full' }"
   >
     <AuthCard>
       <AuthEmailVerify />

@@ -53,8 +53,8 @@ const handleClearError = (linkId: number) => {
   }
 }
 const links: ButtonProps[] = [
-  { label: 'Return Home', icon: ICONS.nav.home, size: 'xl', class: 'hover:cursor-pointer', onClick: () => handleClearError(1) },
-  { label: 'Contact Support', icon: ICONS.action.call, size: 'xl', variant: 'soft', class: 'hover:cursor-pointer', onClick: () => handleClearError(2) }
+  { label: 'Return Home', icon: ICONS.nav.home, size: 'xl', onClick: () => handleClearError(1) },
+  { label: 'Contact Support', icon: ICONS.action.call, size: 'xl', variant: 'soft', onClick: () => handleClearError(2) }
 ]
 </script>
 

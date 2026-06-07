@@ -7,7 +7,7 @@ const navItems = useNavigation()
 
 <template>
   <div class="flex flex-col min-h-screen w-full">
-    <div class="fixed flex items-center justify-center h-screen w-full inset-0 -z-2 opacity-20">
+    <div class="fixed flex items-center justify-center h-screen w-full inset-0 -z-2 opacity-10">
       <img
         src="/img/logo-collapsed.png"
         class="aspect-square"
@@ -57,18 +57,13 @@ const navItems = useNavigation()
             size="lg"
             variant="soft"
             color="neutral"
-            class="rounded-full"
+            :ui="{
+              base: 'rounded-full'
+            }"
           />
           <div
             v-if="authStore.isAuthenticated"
-            class="flex items-center gap-2"
           >
-            <!-- <UButton
-              label="Download App"
-              :icon="ICONS.action.download"
-              :to="URLS.landing.benefits"
-              class="rounded-full"
-            /> -->
             <ProfileDropdown />
           </div>
 
@@ -84,8 +79,10 @@ const navItems = useNavigation()
                 label="Sign In"
                 size="lg"
                 variant="soft"
-                color="neutral"
-                class="px-2 rounded-full cursor-pointer"
+                color="primary"
+                :ui="{
+                  base: 'rounded-full'
+                }"
               />
 
               <template #title>
@@ -108,7 +105,6 @@ const navItems = useNavigation()
             icon="i-lucide-x"
             size="sm"
             variant="solid"
-            class="hover:cursor-pointer"
             @click="close"
           />
         </div>

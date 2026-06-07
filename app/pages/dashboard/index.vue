@@ -66,7 +66,9 @@ const downloadPdf = () => {
           size="xl"
           color="primary"
           variant="solid"
-          class="rounded-xl hover:cursor-pointer"
+          :ui="{
+            base: 'rounded-xl'
+          }"
           :disabled="profileCompletion < 80"
           @click="downloadPdf"
         />
