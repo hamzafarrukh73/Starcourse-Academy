@@ -4,6 +4,7 @@ const layoutStore = useLayoutStore()
 
 <template>
   <div class="flex flex-col min-h-dvh w-full">
+    <BgGlow />
     <UHeader
       mode="slideover"
       :title="layoutStore.websiteTitle"

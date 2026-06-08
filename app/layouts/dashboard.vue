@@ -81,7 +81,6 @@ const navItems = useNavigation()
                   base: 'rounded-full'
                 }"
               />
-              <ProfileDropdown />
             </template>
           </UDashboardNavbar>
         <!-- <UDashboardToolbar>
@@ -97,6 +96,7 @@ const navItems = useNavigation()
         <template #body>
           <slot />
         </template>
+
         <template #footer>
           <UNavigationMenu
             orientation="horizontal"
@@ -104,7 +104,7 @@ const navItems = useNavigation()
             highlight
             :items="navItems[0]"
             :ui="{
-              root: 'w-full [&>div]:grow',
+              root: 'w-full [&>div]:grow border-t border-default/20',
               item: 'w-full',
               list: 'flex justify-between gap-4 w-full',
               link: 'flex-col',

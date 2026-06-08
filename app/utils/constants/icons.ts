@@ -31,6 +31,7 @@ export const ICONS = {
     activity: 'i-lucide-activity',
     alert: 'i-lucide-alert-circle',
     books: 'i-lucide-book-copy',
+    notes: 'i-lucide-notebook-pen',
     connect: 'i-lucide-workflow',
     copyright: 'i-lucide-copyright',
     education: 'i-lucide-graduation-cap',

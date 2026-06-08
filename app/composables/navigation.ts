@@ -20,11 +20,15 @@ export const useNavigation = () => {
           to: URLS.dashboard.home
         }, {
           icon: ICONS.info.books,
-          label: 'Library',
-          to: URLS.dashboard.students
+          label: 'Books',
+          to: URLS.dashboard.books
         }, {
-          icon: ICONS.nav.user,
-          label: 'Profile',
+          icon: ICONS.info.notes,
+          label: 'Notes',
+          to: URLS.dashboard.notes
+        }, {
+          icon: ICONS.nav.config,
+          label: 'Settings',
           to: URLS.dashboard.personal
         }],
         [{

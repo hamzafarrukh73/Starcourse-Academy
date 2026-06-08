@@ -7,6 +7,7 @@ const navItems = useNavigation()
 
 <template>
   <div class="flex flex-col min-h-dvh w-full">
+    <BgGlow />
     <div class="fixed flex items-center justify-center h-dvh w-full inset-0 -z-2 opacity-10">
       <img
         src="/img/logo-collapsed.png"

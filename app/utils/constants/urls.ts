@@ -22,8 +22,9 @@ export const URLS = {
   },
   dashboard: {
     home: '/dashboard',
+    books: '/dashboard/books',
+    notes: '/dashboard/notes',
     personal: '/dashboard/personal',
-    students: '/dashboard/students',
     activities: '/dashboard/activities',
     print: '/dashboard/print',
     account: '/dashboard/account'
