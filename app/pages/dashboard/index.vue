@@ -6,7 +6,7 @@ definePageMeta({
 })
 
 const usersStore = useUsersStore()
-// const authStore = useAuthStore()
+const authStore = useAuthStore()
 
 onMounted(async () => {
   await usersStore.getUser()
@@ -16,7 +16,29 @@ onMounted(async () => {
 //   return `${usersStore.user?.first_name || ''} ${usersStore.user?.last_name || ''}`.trim() || 'User'
 // })
 
-const counts = [1, 2, 3, 4]
+const items = ref([
+  {
+    title: 'Books',
+    icon: ICONS.info.books,
+    description: 'Browse Official Textbooks',
+    to: URLS.dashboard.books
+  }, {
+    title: 'Notes',
+    icon: ICONS.info.notes,
+    description: 'Browse our chapter-wise notes',
+    to: URLS.dashboard.notes
+  }, {
+    title: 'Recent Read',
+    icon: ICONS.info.history,
+    description: 'Return to the last thing you were reading',
+    to: URLS.dashboard.books
+  }, {
+    title: 'Preferences',
+    icon: ICONS.nav.config,
+    description: 'Personalize your experience through settings',
+    to: URLS.dashboard.personal
+  }
+])
 </script>
 
 <template>
@@ -54,27 +76,30 @@ const counts = [1, 2, 3, 4]
           size="xl"
           color="error"
           variant="ghost"
+          @click="authStore.logout(URLS.auth.login)"
         />
       </div>
     </UCard>
     <USeparator />
     <UPageGrid
       :ui="{
-        base: 'grid-cols-2'
+        base: 'grid-cols-1'
       }"
     >
       <UPageCard
-        v-for="count in counts"
-        :key="count"
-        title="Browse Books"
-        :icon="ICONS.info.books"
-        :to="URLS.dashboard.books"
+        v-for="item in items"
+        :key="item.title"
+        :to="item.to"
         orientation="horizontal"
         variant="soft"
         :ui="{
           root: 'rounded-full px-4'
         }"
-      />
+      >
+        <UPageFeature
+          v-bind="item"
+        />
+      </UPageCard>
     </UPageGrid>
   </UPageGrid>
 </template>

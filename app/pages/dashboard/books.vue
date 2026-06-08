@@ -30,6 +30,7 @@ const items = ref([
     value: '0'
   }
 ])
+const value = ref('0')
 </script>
 
 <template>
@@ -39,18 +40,37 @@ const items = ref([
         base: 'grid-cols-1'
       }"
     >
+      <div class="flex justify-between items-center w-full">
+        <URadioGroup
+          v-model="value"
+          :items="items"
+          orientation="horizontal"
+          size="sm"
+          variant="card"
+          indicator="hidden"
+          :ui="{
+            root: 'w-full',
+            fieldset: 'justify-between sm:justify-center',
+            item: 'rounded-full'
+          }"
+        />
+      </div>
       <UPageCard
         v-for="item in items"
         :key="item.label"
-        :title="item.label"
-        description="Bundle of official textbooks"
         :to="URLS.dashboard.notes"
         orientation="vertical"
         variant="soft"
         :ui="{
           root: 'rounded-full px-4'
         }"
-      />
+      >
+        <UPageFeature
+          :title="item.label"
+          :icon="ICONS.info.books"
+          description="Bundle of official textbooks"
+        />
+      </UPageCard>
     </UPageGrid>
   </UPageGrid>
 </template>

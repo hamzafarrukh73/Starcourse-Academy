@@ -14,6 +14,30 @@ onMounted(async () => {
   await usersStore.getUser()
 })
 
+const cards = ref([
+  {
+    label: '9th Class',
+    title: 'Computer Science & Entrepreneurship',
+    description: '9th Class',
+    value: '9'
+  }, {
+    label: '10th Class',
+    title: 'Computer Science & Entrepreneurship',
+    description: '10th Class',
+    value: '10'
+  }, {
+    label: '11th Class',
+    title: 'Computer Science & Entrepreneurship',
+    description: '11th Class',
+    value: '11'
+  }, {
+    label: '12th Class',
+    title: 'Computer Science & Entrepreneurship',
+    description: '12th Class',
+    value: '12'
+  }
+])
+
 const items = ref([
   {
     label: '9th Class',
@@ -32,7 +56,7 @@ const items = ref([
     value: '0'
   }
 ])
-const value = ref('0')
+const value = ref('9')
 </script>
 
 <template>
@@ -73,6 +97,8 @@ const value = ref('0')
           variant="card"
           indicator="hidden"
           :ui="{
+            root: 'w-full',
+            fieldset: 'justify-between sm:justify-center',
             item: 'rounded-full'
           }"
         />
@@ -81,21 +107,26 @@ const value = ref('0')
 
     <UPageGrid
       :ui="{
-        base: 'grid-cols-2'
+        base: 'grid-cols-1'
       }"
     >
       <UPageCard
-        v-for="item in items"
+        v-for="item in cards"
         :key="item.label"
-        :title="item.label"
-        description="Computer Science Chapter 1"
+
         :to="URLS.dashboard.notes"
         orientation="vertical"
         variant="soft"
         :ui="{
           root: 'rounded-full px-4'
         }"
-      />
+      >
+        <UPageFeature
+          title="Computer Science & Entrepreneurship"
+          :icon="ICONS.info.notes"
+          :description="item.label"
+        />
+      </UPageCard>
     </UPageGrid>
   </UPageGrid>
 </template>
