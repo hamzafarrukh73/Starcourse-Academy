@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import type { NavigationMenuItem } from 'nuxt/ui'
-
 const navItems = useNavigation()
 </script>
 
@@ -9,11 +7,20 @@ const navItems = useNavigation()
     <UDashboardGroup storage="cookie">
       <UDashboardSidebar
         collapsible
-        :default-size="20"
-        class="rounded-r-xl bg-neutral-800/10 dark:bg-neutral-800/5"
+        :default-size="15"
+        :collapsed-size="5"
+        :ui="{
+          root: 'rounded-r-xl border-none'
+        }"
       >
         <template #header="{ collapsed }">
-          <AppLogo :collapsed="collapsed" />
+          <div class="flex justify-between items-center w-full">
+            <AppLogo
+              v-if="!collapsed"
+              :collapsed="collapsed"
+            />
+            <UDashboardSidebarCollapse />
+          </div>
         </template>
         <template #default="{ collapsed }">
           <UNavigationMenu
@@ -41,24 +48,38 @@ const navItems = useNavigation()
             toggle-side="left"
             :menu="{ side: 'left' }"
             :toggle="false"
+            :ui="{
+              root: 'border-none'
+            }"
           >
-            <template #leading>
-              <UDashboardSidebarCollapse />
-            </template>
             <template #title>
               <AppLogo
-                collapsed
                 class="lg:hidden"
               />
             </template>
 
             <template #right>
               <UButton
-                label="Return Home"
+                :icon="ICONS.brand.youtube"
+                :to="LINKS.social.youtube"
+                target="_blank"
+                size="lg"
                 variant="soft"
                 color="neutral"
-                :icon="ICONS.nav.home"
-                :to="URLS.home"
+                :ui="{
+                  base: 'rounded-full'
+                }"
+              />
+              <UButton
+                :icon="ICONS.brand.whatsapp"
+                :to="LINKS.social.whatsapp"
+                target="_blank"
+                size="lg"
+                variant="soft"
+                color="neutral"
+                :ui="{
+                  base: 'rounded-full'
+                }"
               />
               <ProfileDropdown />
             </template>
@@ -79,15 +100,16 @@ const navItems = useNavigation()
         <template #footer>
           <UNavigationMenu
             orientation="horizontal"
-            tooltip
-            popover
+            variant="link"
+            highlight
             :items="navItems[0]"
             :ui="{
-              root: 'justify-around border-t border-default',
-              list: 'flex justify-center gap-4',
+              root: 'w-full [&>div]:grow',
+              item: 'w-full',
+              list: 'flex justify-between gap-4 w-full',
               link: 'flex-col',
-              linkLabel: 'text-xs! font-normal',
-              linkLeadingIcon: 'size-[5vh]'
+              linkLabel: 'text-xs font-normal',
+              linkLeadingIcon: 'size-6'
             }"
             class="md:hidden justify-center"
           />
@@ -97,4 +119,8 @@ const navItems = useNavigation()
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+::-webkit-scrollbar {
+  display: none !important;
+}
+</style>

@@ -15,17 +15,17 @@ export const useNavigation = () => {
     dashboard: computed<NavigationMenuItem[][]>(() => {
       return [
         [{
-          icon: ICONS.info.stats,
-          label: 'Profile Overview',
+          icon: ICONS.nav.home,
+          label: 'Home',
           to: URLS.dashboard.home
         }, {
-          icon: ICONS.nav.user,
-          label: 'Personal Profile',
-          to: URLS.dashboard.personal
-        }, {
-          icon: ICONS.info.education,
-          label: 'Student Details',
+          icon: ICONS.info.books,
+          label: 'Library',
           to: URLS.dashboard.students
+        }, {
+          icon: ICONS.nav.user,
+          label: 'Profile',
+          to: URLS.dashboard.personal
         }],
         [{
           icon: ICONS.nav.user,

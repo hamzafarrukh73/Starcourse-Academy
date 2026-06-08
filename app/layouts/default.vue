@@ -48,7 +48,9 @@ const navItems = useNavigation()
             size="lg"
             variant="soft"
             color="neutral"
-            class="rounded-full"
+            :ui="{
+              base: 'rounded-full'
+            }"
           />
           <UButton
             :icon="ICONS.brand.whatsapp"
