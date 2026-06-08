@@ -6,8 +6,8 @@ const navItems = useNavigation()
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen w-full">
-    <div class="fixed flex items-center justify-center h-screen w-full inset-0 -z-2 opacity-10">
+  <div class="flex flex-col min-h-dvh w-full">
+    <div class="fixed flex items-center justify-center h-dvh w-full inset-0 -z-2 opacity-10">
       <img
         src="/img/logo-collapsed.png"
         class="aspect-square"
