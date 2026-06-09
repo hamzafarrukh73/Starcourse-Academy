@@ -20,7 +20,7 @@ const items = ref([
   {
     title: 'Books',
     icon: ICONS.info.books,
-    description: 'Browse Official Textbooks',
+    description: 'Browse official Textbooks',
     to: URLS.dashboard.books
   }, {
     title: 'Notes',
@@ -28,21 +28,25 @@ const items = ref([
     description: 'Browse our chapter-wise notes',
     to: URLS.dashboard.notes
   }, {
-    title: 'Recent Read',
+    title: 'Recent',
     icon: ICONS.info.history,
-    description: 'Return to the last thing you were reading',
+    description: 'Go back to what you were reading',
     to: URLS.dashboard.books
   }, {
     title: 'Preferences',
     icon: ICONS.nav.config,
-    description: 'Personalize your experience through settings',
+    description: 'Personalize your experience',
     to: URLS.dashboard.personal
   }
 ])
 </script>
 
 <template>
-  <UPageGrid>
+  <UPageGrid
+    :ui="{
+      base: 'grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1'
+    }"
+  >
     <UCard
       variant="soft"
       :ui="{
@@ -61,7 +65,7 @@ const items = ref([
             ui: {
               root: 'size-20',
               image: 'object-contain',
-              icon: 'size-15'
+              icon: 'size-15 text-primary'
             }
           }"
           orientation="horizontal"
@@ -83,7 +87,7 @@ const items = ref([
     <USeparator />
     <UPageGrid
       :ui="{
-        base: 'grid-cols-1'
+        base: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2'
       }"
     >
       <UPageCard

@@ -12,6 +12,26 @@ onMounted(async () => {
   await usersStore.getUser()
 })
 
+const books = ref([
+  {
+    title: 'Computer Science & Entrepreneurship',
+    description: '9th Class',
+    icon: ICONS.info.books
+  }, {
+    title: 'Computer Science & Entrepreneurship',
+    description: '10th Class',
+    icon: ICONS.info.books
+  }, {
+    title: 'Computer Science & Entrepreneurship',
+    description: '11th Class',
+    icon: ICONS.info.books
+  }, {
+    title: 'Computer Science & Entrepreneurship',
+    description: '12th Class',
+    icon: ICONS.info.books
+  }
+])
+
 const items = ref([
   {
     label: '9th Class',
@@ -34,30 +54,34 @@ const value = ref('0')
 </script>
 
 <template>
-  <UPageGrid>
+  <UPageGrid
+    :ui="{
+      base: 'grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1'
+    }"
+  >
+    <div class="flex justify-between items-center w-full">
+      <URadioGroup
+        v-model="value"
+        :items="items"
+        orientation="horizontal"
+        size="sm"
+        variant="card"
+        indicator="hidden"
+        :ui="{
+          root: 'w-full',
+          fieldset: 'justify-center',
+          item: 'rounded-full'
+        }"
+      />
+    </div>
     <UPageGrid
       :ui="{
-        base: 'grid-cols-1'
+        base: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2'
       }"
     >
-      <div class="flex justify-between items-center w-full">
-        <URadioGroup
-          v-model="value"
-          :items="items"
-          orientation="horizontal"
-          size="sm"
-          variant="card"
-          indicator="hidden"
-          :ui="{
-            root: 'w-full',
-            fieldset: 'justify-between sm:justify-center',
-            item: 'rounded-full'
-          }"
-        />
-      </div>
       <UPageCard
-        v-for="item in items"
-        :key="item.label"
+        v-for="book in books"
+        :key="book.title"
         :to="URLS.dashboard.notes"
         orientation="vertical"
         variant="soft"
@@ -66,9 +90,7 @@ const value = ref('0')
         }"
       >
         <UPageFeature
-          :title="item.label"
-          :icon="ICONS.info.books"
-          description="Bundle of official textbooks"
+          v-bind="book"
         />
       </UPageCard>
     </UPageGrid>

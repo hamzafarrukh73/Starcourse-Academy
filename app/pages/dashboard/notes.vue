@@ -14,27 +14,26 @@ onMounted(async () => {
   await usersStore.getUser()
 })
 
-const cards = ref([
+const subjects = ref([
+  'Computer', 'Math', 'Physics', 'Biology', 'Chemistry'
+])
+const notes = ref([
   {
-    label: '9th Class',
+    icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '9th Class',
-    value: '9'
+    description: '9th Class'
   }, {
-    label: '10th Class',
+    icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '10th Class',
-    value: '10'
+    description: '10th Class'
   }, {
-    label: '11th Class',
+    icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '11th Class',
-    value: '11'
+    description: '11th Class'
   }, {
-    label: '12th Class',
+    icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '12th Class',
-    value: '12'
+    description: '12th Class'
   }
 ])
 
@@ -60,7 +59,11 @@ const value = ref('9')
 </script>
 
 <template>
-  <UPageGrid>
+  <UPageGrid
+    :ui="{
+      base: 'grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1'
+    }"
+  >
     <div class="flex flex-col items-start gap-4">
       <div class="flex items-center gap-4 w-full">
         <UFieldGroup
@@ -83,6 +86,7 @@ const value = ref('9')
           />
         </UFieldGroup>
         <USelect
+          :items="subjects"
           placeholder="All Subjects"
           size="xl"
           variant="soft"
@@ -98,7 +102,7 @@ const value = ref('9')
           indicator="hidden"
           :ui="{
             root: 'w-full',
-            fieldset: 'justify-between sm:justify-center',
+            fieldset: 'justify-center',
             item: 'rounded-full'
           }"
         />
@@ -107,13 +111,12 @@ const value = ref('9')
 
     <UPageGrid
       :ui="{
-        base: 'grid-cols-1'
+        base: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2'
       }"
     >
       <UPageCard
-        v-for="item in cards"
-        :key="item.label"
-
+        v-for="note in notes"
+        :key="note.title"
         :to="URLS.dashboard.notes"
         orientation="vertical"
         variant="soft"
@@ -122,9 +125,7 @@ const value = ref('9')
         }"
       >
         <UPageFeature
-          title="Computer Science & Entrepreneurship"
-          :icon="ICONS.info.notes"
-          :description="item.label"
+          v-bind="note"
         />
       </UPageCard>
     </UPageGrid>
