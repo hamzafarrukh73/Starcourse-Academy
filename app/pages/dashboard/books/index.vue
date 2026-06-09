@@ -16,19 +16,23 @@ const books = ref([
   {
     title: 'Computer Science & Entrepreneurship',
     description: '9th Class',
-    icon: ICONS.info.books
+    icon: ICONS.info.books,
+    to: '/dashboard/books/cse9th'
   }, {
     title: 'Computer Science & Entrepreneurship',
     description: '10th Class',
-    icon: ICONS.info.books
+    icon: ICONS.info.books,
+    to: '/dashboard/books/cse10th'
   }, {
     title: 'Computer Science & Entrepreneurship',
     description: '11th Class',
-    icon: ICONS.info.books
+    icon: ICONS.info.books,
+    to: '/dashboard/books/cse11th'
   }, {
     title: 'Computer Science & Entrepreneurship',
     description: '12th Class',
-    icon: ICONS.info.books
+    icon: ICONS.info.books,
+    to: '/dashboard/books/cse12th'
   }
 ])
 
@@ -82,7 +86,7 @@ const value = ref('0')
       <UPageCard
         v-for="book in books"
         :key="book.title"
-        :to="URLS.dashboard.notes"
+        :to="book.to"
         orientation="vertical"
         variant="soft"
         :ui="{

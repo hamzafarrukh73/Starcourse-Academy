@@ -75,5 +75,6 @@ button {
 .layout-enter-from,
 .layout-leave-to {
   opacity: 0;
-  filter: blur(12px);
+  transform: translateY(12px);
+  filter: blur(8px);
 }

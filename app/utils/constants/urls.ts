@@ -24,6 +24,12 @@ export const URLS = {
     home: '/dashboard',
     books: '/dashboard/books',
     notes: '/dashboard/notes',
+    settings: {
+      home: '/dashboard/settings',
+      profile: '/dashboard/settings/profile',
+      preferences: '/dashboard/settings/preferences',
+      about: '/dashboard/settings/about'
+    },
     personal: '/dashboard/personal',
     activities: '/dashboard/activities',
     print: '/dashboard/print',

@@ -21,19 +21,25 @@ const notes = ref([
   {
     icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '9th Class'
+    description: '9th Class',
+    to: '/dashboard/notes/cse9th'
   }, {
     icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '10th Class'
+    description: '10th Class',
+
+    to: '/dashboard/notes/cse10th'
   }, {
     icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '11th Class'
+    description: '11th Class',
+
+    to: '/dashboard/notes/cse11th'
   }, {
     icon: ICONS.info.notes,
     title: 'Computer Science & Entrepreneurship',
-    description: '12th Class'
+    description: '12th Class',
+    to: '/dashboard/notes/cse12th'
   }
 ])
 
@@ -117,7 +123,7 @@ const value = ref('9')
       <UPageCard
         v-for="note in notes"
         :key="note.title"
-        :to="URLS.dashboard.notes"
+        :to="note.to"
         orientation="vertical"
         variant="soft"
         :ui="{

@@ -16,17 +16,17 @@ const items = ref([
     title: 'Profile',
     description: 'Edit your profile',
     icon: ICONS.nav.user,
-    to: URLS.dashboard.books
+    to: URLS.dashboard.settings.profile
   }, {
     title: 'Preferences',
     description: 'Customize your preferences',
     icon: ICONS.action.heart,
-    to: URLS.dashboard.books
+    to: URLS.dashboard.settings.preferences
   }, {
     title: 'About',
     description: 'Learn more about us',
     icon: ICONS.info.help,
-    to: URLS.dashboard.books
+    to: URLS.dashboard.settings.about
   }, {
     title: 'Logout',
     description: 'Go back to login screen',

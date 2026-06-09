@@ -1,17 +1,24 @@
 <script setup lang="ts">
 const layoutStore = useLayoutStore()
+const route = useRoute()
+const router = useRouter()
 </script>
 
 <template>
   <div class="flex flex-col min-h-dvh w-full">
-    <BgGlow />
     <UHeader
       mode="slideover"
       :title="layoutStore.websiteTitle"
       :toggle="false"
     >
       <template #title>
-        <AppLogo />
+        <div class="flex items-center gap-4">
+          <UButton
+            icon="i-lucide-arrow-left"
+            @click="router.go(-1)"
+          />
+          <h3>{{ route.meta.pageTitle }}</h3>
+        </div>
       </template>
 
       <template #right>

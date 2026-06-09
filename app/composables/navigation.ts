@@ -29,7 +29,7 @@ export const useNavigation = () => {
         }, {
           icon: ICONS.nav.config,
           label: 'Settings',
-          to: URLS.dashboard.personal
+          to: URLS.dashboard.settings.home
         }],
         [{
           icon: ICONS.nav.user,

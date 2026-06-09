@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const authStore = useAuthStore()
+// const authStore = useAuthStore()
 const layoutStore = useLayoutStore()
 
 const navItems = useNavigation()
@@ -64,7 +64,7 @@ const navItems = useNavigation()
               base: 'rounded-full'
             }"
           />
-          <div
+          <!-- <div
             v-if="authStore.isAuthenticated"
           >
             <ProfileDropdown />
@@ -98,7 +98,7 @@ const navItems = useNavigation()
                 <AuthLogin />
               </template>
             </UModal>
-          </div>
+          </div> -->
         </div>
       </template>
 

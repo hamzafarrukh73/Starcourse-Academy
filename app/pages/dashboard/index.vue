@@ -36,7 +36,7 @@ const items = ref([
     title: 'Preferences',
     icon: ICONS.nav.config,
     description: 'Personalize your experience',
-    to: URLS.dashboard.personal
+    to: URLS.dashboard.settings.home
   }
 ])
 </script>
